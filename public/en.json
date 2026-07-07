@@ -1,0 +1,45 @@
+{
+	"id": "en",
+	"menu": {
+		"expense": "Expenses",
+		"newExpense": "Entry",
+		"settings": "Settings",
+		"categories": "Categories",
+		"category": "Category",
+		"reset": "Reset",
+		"erase": "Delete"
+	},
+	"day": [
+		"Sunday",
+		"Monday",
+		"Tuesday",
+		"Wednesday",
+		"Thursday",
+		"Friday",
+		"Saturday"
+	],
+	"month": [
+		"January",
+		"February",
+		"March",
+		"April",
+		"May",
+		"June",
+		"July",
+		"August",
+		"September",
+		"October",
+		"November",
+		"December"
+	],
+	"money": "₹",
+	"catExists": "Category already exists!",
+	"invalidData": "Invalid input!",
+	"defaultCat": "Market;Gas Station;Snacks;Store",
+	"moneyInvalid": "Invalid value! Example: 105.50",
+	"noneExpanse": "No expenses!",
+	"reset": "Reset!",
+	"confirm": "Do you want to proceed?",
+	"accept": "Continue",
+	"cancel": "Cancel"
+}

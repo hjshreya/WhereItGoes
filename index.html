@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<title>Budget</title>
+
+	<link rel="manifest" href="manifest.json">
+	<link rel="stylesheet" href="style.css" />
+	<script src="script.js"></script>
+</head>
+
+<body>
+	<div id="app">
+		<div id="menu">
+			<input type="button" id="expense" value="Expenses" onclick="navigate('expensesTab');">
+			<input type="button" id="entry" value="Entry" onclick="navigate('expenseEntryTab');">
+			<input type="button" id="settings" value="Settings" onclick="navigate('configTab');">
+		</div>
+
+		<div id="expenseEntryTab" class="tab">
+			<form id="expenseForm">
+				<div class="row">
+					<input 
+						type="number" 
+						id="value" 
+						placeholder="0.00" 
+						autocomplete="off" 
+						onkeyup="predictCategory();" 
+						onchange="predictCategory();"
+					>
+				</div>
+
+				<div class="row">
+					<select id="location"></select>
+					<input type="button" value="Ok" onclick="addExpense();">
+				</div>
+			</form>
+		</div>
+
+		<div id="expensesTab" class="tab">
+			<div id="expensesContent" class="content"></div>
+
+			<div id="deleteExpense" class="delete-button-container">
+				<input type="button" id="deleteButton" value="Delete" onclick="removeExpense();">
+			</div>
+		</div>
+
+		<div id="configTab" class="tab">
+			<div id="configPanel">
+				<input 
+					type="button" 
+					id="categoriesButton" 
+					value="Categories" 
+					onclick="navigate('categoriesTab');" 
+					class="btn" 
+				/>
+
+				<input 
+					type="button" 
+					id="resetButton" 
+					value="Reset" 
+					onclick="reset();" 
+					class="btn" 
+					style="margin-top: 0.2em;" 
+				/>
+			</div>
+		</div>
+
+		<div id="categoriesTab" class="tab">
+			<div class="row">
+				<form id="categoryForm">
+					<input type="text" id="categoryInput" placeholder="Category" />
+					<input type="button" id="addCategoryButton" value="+" onclick="saveCategories();" />
+				</form>
+			</div>
+
+			<div id="categories" class="content"></div>
+
+			<div class="delete-button-container">
+				<input 
+					type="button" 
+					value="Delete" 
+					id="deleteCategoryButton" 
+					onclick="removeCategories();" 
+				/>
+			</div>
+		</div>
+	</div>
+
+	<div id="backdrop"></div>
+
+	<div id="alert">
+		<div id="alertMessage"></div>
+		<div id="alertButton">
+			<input type="button" value="Ok!" onclick="showAlert('hide');" />
+		</div>
+	</div>
+
+	<div id="confirm">
+		<form id="confirmForm">
+			<div id="confirmMessage"></div>
+
+			<div id="confirmButtons">
+				<input 
+					type="button" 
+					value="Cancel" 
+					id="cancelButton" 
+					onclick="openConfirm('hide');" 
+				/>
+
+				<input type="button" value="Ok!" id="confirmButton" />
+			</div>
+		</form>
+	</div>
+</body>
+</html>
